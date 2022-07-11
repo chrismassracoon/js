@@ -1,4 +1,4 @@
-let numberOfFilms = prompt('Cколько фильмов вы уже посмотрели?');
+let numberOfFilms = prompt('Cколько фильмов вы уже посмотрели?', '');
 let personalMovieDB = {
 count : numberOfFilms,
 movies : {},
@@ -7,8 +7,8 @@ genres : [],
 prviat : false,
 }
 
-let firstQuestion = prompt('Один из последних фильмов?');
-let userGrade = prompt('На сколько оцените его?');
+let firstQuestion = prompt('Один из последних фильмов?', '');
+let userGrade = prompt('На сколько оцените его?', '');
 
 personalMovieDB.movies[firstQuestion] = userGrade;
 
