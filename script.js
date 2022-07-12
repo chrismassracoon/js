@@ -1,15 +1,22 @@
-let numberOfFilms = prompt('Cколько фильмов вы уже посмотрели?', '');
-let personalMovieDB = {
-count : numberOfFilms,
-movies : {},
-actors : {},
-genres : [],
-prviat : false,
-}
 
-let firstQuestion = prompt('Один из последних фильмов?', '');
-let userGrade = prompt(' На сколько оцените его?', '');
+const input = document.querySelector('#films');
+const button = document.querySelector('#tick');
+const span = document.querySelector('.text');
+const films = document.querySelector('.films');
+const arr = [];
 
-personalMovieDB.movies[firstQuestion] = userGrade;
-
-console.log(personalMovieDB.movies);
+input.addEventListener('input', () => {
+	if(input.value.length < 50) {
+		span.innerHTML = `We did it ${input.value.length}`;
+	} else if (input.value.length > 50) {
+		span.innerHTML = `Вы ввели  ${input.value.length} символов, слишком длинное название`;
+	}
+	console.log(input.value.length)
+	if(input.value.length < 1){
+		span.innerHTML = '';
+		films.remove();
+	}
+})
+button.addEventListener('click', () => {
+	films.insertAdjacentText('afterbegin', input.value);
+})
