@@ -2,8 +2,9 @@
 const input = document.querySelector('#films');
 const button = document.querySelector('#tick');
 const span = document.querySelector('.text');
-const films = document.querySelector('.films');
+const films = document.querySelector('.filmes');
 const arr = [];
+
 
 input.addEventListener('input', () => {
 	if(input.value.length < 50) {
@@ -15,8 +16,11 @@ input.addEventListener('input', () => {
 	if(input.value.length < 1){
 		span.innerHTML = '';
 		films.remove();
-	}
+}
 })
 button.addEventListener('click', () => {
-	films.insertAdjacentText('afterbegin', input.value);
+	arr.push(input.value);
+	console.log(arr);
+		films.innerHTML = `<div class="filmes_item">Фильм ${arr} под номером </div>`;
 })
+
